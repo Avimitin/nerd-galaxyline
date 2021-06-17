@@ -19,7 +19,7 @@ Requires neovim 0.5.0+ and a patched
 [nerd font](https://www.nerdfonts.com/).
 
 You may also need [neovim-deus](https://github.com/Avimitin/neovim-deus)
-to get full colorscheme looks.
+to get the full colorscheme look.
 
 ## Install
 
