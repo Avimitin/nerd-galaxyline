@@ -5,7 +5,7 @@
 nerd-galaxyline is a modern and great-looking status bar theme for 
 [galaxyline](https://github.com/glepnir/galaxyline.nvim). Forked from
 [evilline](https://github.com/LoydAndrew/nvim/blob/main/evilline.lua)
-and numerous changes have been made in the appearance.
+and have numerous changes been made in the appearance.
 
 ## Features
 
