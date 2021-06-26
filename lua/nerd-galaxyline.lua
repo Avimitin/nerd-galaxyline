@@ -236,6 +236,8 @@ insert_left{
   }
 }
 
+insert_blank_line_at_left()
+
 insert_left {
   GitIcon = {
     provider = function() return '  ' end,
