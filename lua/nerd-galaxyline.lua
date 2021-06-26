@@ -220,6 +220,22 @@ insert_left{
   }
 }
 
+insert_left{
+  FileIcon = {
+    provider = 'FileIcon',
+    condition = buffer_not_empty,
+    highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.line_bg},
+  },
+}
+
+insert_left{
+  BufferType = {
+    provider = 'FileTypeName',
+    condition = has_file_type,
+    highlight = {colors.fg,colors.line_bg}
+  }
+}
+
 insert_left {
   GitIcon = {
     provider = function() return '  ' end,
@@ -314,22 +330,6 @@ insert_left {
 }
 
 insert_blank_line_at_left()
-
-insert_left{
-  FileIcon = {
-    provider = 'FileIcon',
-    condition = buffer_not_empty,
-    highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.line_bg},
-  },
-}
-
-insert_left{
-  BufferType = {
-    provider = 'FileTypeName',
-    condition = has_file_type,
-    highlight = {colors.fg,colors.line_bg}
-  }
-}
 
 insert_left{
   Separa = {
