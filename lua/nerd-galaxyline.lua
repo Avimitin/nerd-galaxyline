@@ -17,7 +17,7 @@ gl.short_line_list = {
 
 local colors = {
     bg       = '#5C687A',
-    line_bg  = '#242a32',
+    line_bg  = '#202733',
     fg       = '#8FBCBB',
     fg_green = '#65a380',
 
@@ -30,8 +30,6 @@ local colors = {
     magenta  = '#C858E9',
     blue     = '#73BA9F',
     red      = '#D54E53',
-
-    mode_bg  = '#202730'
 }
 
 local function lsp_status(status)
@@ -141,7 +139,7 @@ end
 insert_left{
   Start = {
     provider = function() return ' ' end,
-    highlight = {colors.mode_bg,}
+    highlight = {colors.line_bg,}
   }
 }
 
@@ -197,7 +195,7 @@ insert_left{
       vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color[vim_mode])
       return alias[vim_mode]
     end,
-    highlight = {colors.mode_bg, colors.mode_bg},
+    highlight = {colors.line_bg, colors.line_bg},
   },
 }
 
@@ -206,7 +204,7 @@ insert_blank_line_at_left()
 insert_left{
   Separa = {
     provider = function() return ' ' end,
-    highlight = {colors.mode_bg, },
+    highlight = {colors.line_bg, },
   }
 }
 
@@ -216,7 +214,7 @@ insert_left{
 insert_left{
   Start = {
     provider = function() return ' ' end,
-    highlight = {colors.mode_bg,}
+    highlight = {colors.line_bg,}
   }
 }
 
@@ -331,12 +329,10 @@ insert_left {
   }
 }
 
-insert_blank_line_at_left()
-
 insert_left{
   Separa = {
     provider = function() return ' ' end,
-    highlight = {colors.mode_bg, },
+    highlight = {colors.line_bg, },
   }
 }
 -- left information panel end}
@@ -344,7 +340,7 @@ insert_left{
 insert_right{
   Start = {
     provider = function() return ' ' end,
-    highlight = {colors.mode_bg,}
+    highlight = {colors.line_bg,}
   }
 }
 
@@ -353,7 +349,7 @@ insert_blank_line_at_right()
 insert_right{
   FileFormat = {
     provider = 'FileFormat',
-    highlight = {colors.fg,colors.mode_bg,'bold'},
+    highlight = {colors.fg,colors.line_bg,'bold'},
   }
 }
 
@@ -393,6 +389,6 @@ insert_blank_line_at_right()
 insert_right{
   Separa = {
     provider = function() return ' ' end,
-    highlight = {colors.mode_bg, },
+    highlight = {colors.line_bg, },
   }
 }
