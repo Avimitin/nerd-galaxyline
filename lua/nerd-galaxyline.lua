@@ -366,6 +366,7 @@ insert_blank_line_at_right()
 insert_right{
   FileFormat = {
     provider = 'FileFormat',
+		condition = checkwidth,
     highlight = {colors.fg,colors.line_bg,'bold'},
   }
 }
@@ -378,6 +379,7 @@ insert_right{
     separator = '',
     separator_highlight = {colors.green, colors.line_bg},
     highlight = {colors.fg,colors.line_bg},
+		condition = checkwidth,
   },
 }
 
@@ -387,6 +389,7 @@ insert_right{
     separator = '',
     separator_highlight = {colors.blue,colors.line_bg},
     highlight = {colors.cyan, colors.line_bg,'bold'},
+		condition = checkwidth,
   }
 }
 
@@ -396,6 +399,7 @@ insert_right{
     separator = '',
     separator_highlight = {colors.blue,colors.line_bg},
     highlight = {colors.cyan, colors.line_bg,'bold'},
+		condition = checkwidth,
   }
 }
 
