@@ -375,7 +375,7 @@ insert_blank_line_at_right()
 insert_right{
   LineInfo = {
     provider = 'LineColumn',
-    separator = '  ',
+    separator = '',
     separator_highlight = {colors.green, colors.line_bg},
     highlight = {colors.fg,colors.line_bg},
   },
@@ -384,18 +384,16 @@ insert_right{
 insert_right{
   PerCent = {
     provider = 'LinePercent',
-    separator = '  ',
+    separator = '',
     separator_highlight = {colors.blue,colors.line_bg},
     highlight = {colors.cyan, colors.line_bg,'bold'},
   }
 }
 
-insert_blank_line_at_right()
-
 insert_right{
   Encode = {
     provider = 'FileEncode',
-    separator = '  ',
+    separator = '',
     separator_highlight = {colors.blue,colors.line_bg},
     highlight = {colors.cyan, colors.line_bg,'bold'},
   }
