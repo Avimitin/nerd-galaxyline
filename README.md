@@ -1,6 +1,6 @@
 # nerd-galaxyline
 
-![img](./img/screenshot.png)
+![img](./image/nerd-galaxyline.png)
 
 nerd-galaxyline is a modern and great-looking status bar theme for 
 [galaxyline](https://github.com/glepnir/galaxyline.nvim). Forked from
@@ -12,6 +12,9 @@ and have numerous changes been made in the appearance.
 - Support `coc.nvim` diagnostic information report.
 - Full nerdfont icons.
 - Looks well with vim-deus themes.
+- Support auto shrink size
+
+![img](./image/nerd-galaxyline-short.png)
 
 ## Requirement
 
