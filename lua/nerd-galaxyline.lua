@@ -43,9 +43,9 @@ if vim.g.nerd_galaxyline_lsp == 'coc' then
 end
 
 local function lsp_status(status)
-    shorter_stat = ''
+    local shorter_stat = ''
     for match in string.gmatch(status, "[^%s]+")  do
-        err_warn = string.find(match, "^[WE]%d+", 0)
+        local err_warn = string.find(match, "^[WE]%d+", 0)
         if not err_warn then
             shorter_stat = shorter_stat .. ' ' .. match
         end
@@ -61,7 +61,7 @@ local function get_coc_lsp()
   return lsp_status(status)
 end
 
-function get_diagnostic_info()
+local function get_diagnostic_info()
   if vim.fn.exists('*coc#rpc#start_server') == 1 then
     return get_coc_lsp()
     end
@@ -74,7 +74,7 @@ local function get_current_func()
       return func_name
   end
 
-function get_function_info()
+local function get_function_info()
   if vim.fn.exists('*coc#rpc#start_server') == 1 then
     return get_current_func()
     end
@@ -91,10 +91,10 @@ local function trailing_whitespace()
 end
 
 CocStatus = get_diagnostic_info
-CocFunc = get_current_func
+CocFunc = get_function_info
 TrailingWhiteSpace = trailing_whitespace
 
-function has_file_type()
+local function has_file_type()
     local f_type = vim.bo.filetype
     if not f_type or f_type == '' then
         return false
@@ -241,22 +241,7 @@ insert_left{
     provider = function()
       return vim.fn.expand("%:F")
     end,
-    condition = buffer_not_empty,
-    highlight = {colors.fg,colors.line_bg}
-  }
-}
-
-insert_left{
-  Space = {
-    provider = function () return ' ' end,
-    highlight = {colors.line_bg,colors.line_bg}
-  }
-}
-
-insert_left{
-  BufferType = {
-    provider = 'FileTypeName',
-    condition = has_file_type,
+    condition = function() return buffer_not_empty and has_file_type() end,
     highlight = {colors.fg,colors.line_bg}
   }
 }
