@@ -17,7 +17,7 @@ gl.short_line_list = {
 
 local colors = {
     bg       = '#5C687A',
-    line_bg  = '#202733',
+    line_bg  = '#16191D',
     fg       = '#8FBCBB',
     fg_green = '#65a380',
 
