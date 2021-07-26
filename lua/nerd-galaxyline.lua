@@ -227,6 +227,23 @@ insert_left{
 }
 
 insert_left{
+  FileName = {
+    provider = function()
+      return vim.fn.expand("%:F")
+    end,
+    condition = buffer_not_empty,
+    highlight = {colors.fg,colors.line_bg}
+  }
+}
+
+insert_left{
+  Space = {
+    provider = function () return ' ' end,
+    highlight = {colors.line_bg,colors.line_bg}
+  }
+}
+
+insert_left{
   BufferType = {
     provider = 'FileTypeName',
     condition = has_file_type,
