@@ -32,6 +32,11 @@ local colors = {
     red      = '#D54E53',
 }
 
+local use_coc = false
+if vim.g.nerd_galaxyline_lsp == 'coc' then
+	use_coc = true
+end
+
 local function lsp_status(status)
     shorter_stat = ''
     for match in string.gmatch(status, "[^%s]+")  do
@@ -335,6 +340,16 @@ insert_left {
      provider = CocStatus,
      highlight = {colors.green,colors.line_bg},
      icon = '  ',
+		 condition = use_coc,
+    }
+}
+
+insert_left {
+    CocStatus = {
+     provider = 'DiagnosticInfo',
+     highlight = {colors.green,colors.line_bg},
+     icon = '  ',
+		 condition = function() return checkwidth() and not use_coc end,
     }
 }
 
@@ -343,7 +358,17 @@ insert_left {
     provider = CocFunc,
     icon = ' λ ',
     highlight = {colors.yellow,colors.line_bg},
+		condition = use_coc,
   }
+}
+
+insert_left {
+	DiagnosticHint = {
+	 provider = 'DiagnosticHint',
+	 condition = function() return checkwidth() and not use_coc end,
+	 highlight = {colors.white,colors.line_bg},
+	 icon = '  ',
+	}
 }
 
 insert_left{
