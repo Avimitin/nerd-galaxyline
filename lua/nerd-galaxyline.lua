@@ -1,4 +1,9 @@
-local gl = require('galaxyline')
+local present1, gl = pcall(require, 'galaxyline')
+if not present1 then
+	print("galxyline not found")
+	return
+end
+
 local gls = gl.section
 
 gl.short_line_list = {
