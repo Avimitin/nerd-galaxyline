@@ -1,7 +1,7 @@
 local present1, gl = pcall(require, 'galaxyline')
 if not present1 then
-	print("galxyline not found")
-	return
+    print("galxyline not found")
+    return
 end
 
 local gls = gl.section
@@ -39,7 +39,7 @@ local colors = {
 
 local use_coc = false
 if vim.g.nerd_galaxyline_lsp == 'coc' then
-	use_coc = true
+    use_coc = true
 end
 
 local function lsp_status(status)
@@ -193,14 +193,14 @@ insert_left{
           ['!']  = 'SH',
       }
       local mode_color = {
-				n = colors.yellow,      i = colors.green,   v=colors.blue,
+        n = colors.yellow,      i = colors.green,   v=colors.blue,
         [''] = colors.blue,   V=colors.blue,      c = colors.magenta,
-				no = colors.red,        s = colors.orange,  S=colors.orange,
-				[''] = colors.orange, ic = colors.yellow, R = colors.purple,
-				Rv = colors.purple,     cv = colors.red,    ce=colors.red,
-				r = colors.cyan,        rm = colors.cyan,   ['r?'] = colors.cyan,
+        no = colors.red,        s = colors.orange,  S=colors.orange,
+        [''] = colors.orange, ic = colors.yellow, R = colors.purple,
+        Rv = colors.purple,     cv = colors.red,    ce=colors.red,
+        r = colors.cyan,        rm = colors.cyan,   ['r?'] = colors.cyan,
         ['!'] = colors.red,     t = colors.red
-			}
+      }
 
       local vim_mode = vim.fn.mode()
       vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color[vim_mode])
@@ -331,7 +331,7 @@ insert_left {
      provider = CocStatus,
      highlight = {colors.green,colors.line_bg},
      icon = '  ',
-		 condition = use_coc,
+         condition = use_coc,
     }
 }
 
@@ -340,7 +340,7 @@ insert_left {
      provider = 'DiagnosticInfo',
      highlight = {colors.green,colors.line_bg},
      icon = '  ',
-		 condition = function() return checkwidth() and not use_coc end,
+         condition = function() return checkwidth() and not use_coc end,
     }
 }
 
@@ -349,17 +349,17 @@ insert_left {
     provider = CocFunc,
     icon = ' λ ',
     highlight = {colors.yellow,colors.line_bg},
-		condition = use_coc,
+        condition = use_coc,
   }
 }
 
 insert_left {
-	DiagnosticHint = {
-	 provider = 'DiagnosticHint',
-	 condition = function() return checkwidth() and not use_coc end,
-	 highlight = {colors.white,colors.line_bg},
-	 icon = '  ',
-	}
+    DiagnosticHint = {
+     provider = 'DiagnosticHint',
+     condition = function() return checkwidth() and not use_coc end,
+     highlight = {colors.white,colors.line_bg},
+     icon = '  ',
+    }
 }
 
 insert_left{
@@ -382,7 +382,7 @@ insert_blank_line_at_right()
 insert_right{
   FileFormat = {
     provider = 'FileFormat',
-		condition = checkwidth,
+        condition = checkwidth,
     highlight = {colors.fg,colors.line_bg,'bold'},
   }
 }
@@ -395,7 +395,7 @@ insert_right{
     separator = '',
     separator_highlight = {colors.green, colors.line_bg},
     highlight = {colors.fg,colors.line_bg},
-		condition = checkwidth,
+        condition = checkwidth,
   },
 }
 
@@ -405,7 +405,7 @@ insert_right{
     separator = '',
     separator_highlight = {colors.blue,colors.line_bg},
     highlight = {colors.cyan, colors.line_bg,'bold'},
-		condition = checkwidth,
+        condition = checkwidth,
   }
 }
 
@@ -415,7 +415,7 @@ insert_right{
     separator = '',
     separator_highlight = {colors.blue,colors.line_bg},
     highlight = {colors.cyan, colors.line_bg,'bold'},
-		condition = checkwidth,
+        condition = checkwidth,
   }
 }
 
