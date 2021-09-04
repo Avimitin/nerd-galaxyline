@@ -12,7 +12,7 @@ and have numerous changes been made in the appearance.
 - Support `coc.nvim` diagnostic information report.
 - Full nerdfont icons.
 - Looks well with vim-deus themes.
-- Support auto shrink size
+- Support automatic truncation of status text
 
 ![img](./image/nerd-galaxyline-short.png)
 
