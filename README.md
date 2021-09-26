@@ -14,7 +14,19 @@ and have numerous changes been made in the appearance.
 - Looks well with vim-deus themes.
 - Support automatic truncation of status text
 
-![img](./image/nerd-galaxyline-short.png)
+<img align="right" width="45%" src="./image/nerd-galaxyline-short.png"/>
+
+- Now support different color scheme and will change background color automatically.
+
+   Currently supported theme:
+
+<img align="right" width="65%" src="https://user-images.githubusercontent.com/30021675/134806451-ac360666-70da-431f-8746-a086facfeaaf.png"/>
+
+```text
+    * ever forest
+    * deus
+    * gruvbox
+```
 
 ## Requirement
 
