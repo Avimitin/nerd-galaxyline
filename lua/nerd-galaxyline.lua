@@ -20,15 +20,13 @@ gl.short_line_list = {
 
 -- VistaPlugin = extension.vista_nearest
 
-local current_scheme = vim.g.colors_name
+local themes_match = {
+    gruvbox = "#261C00",
+    everforest = "#282E2C",
+    deus = "#16191D",
+}
 
-local line_bg_color = '#16191D'
-
-if current_scheme == "everforest" then
-  line_bg_color = "#282E2C"
-elseif current_scheme == "gruvbox" then
-  line_bg_color = "#261C00"
-end
+local line_bg_color = themes_match[vim.g.colors_name]
 
 local colors = {
     bg       = '#5C687A',
