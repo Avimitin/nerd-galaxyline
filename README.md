@@ -28,6 +28,13 @@ and have numerous changes been made in the appearance.
     * gruvbox
 ```
 
+<br>
+<br>
+
+- Short line support
+
+![image](./image/short-line.png)
+
 ## Requirement
 
 Requires neovim 0.5.0+ and a patched
