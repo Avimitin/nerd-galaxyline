@@ -6,18 +6,6 @@ end
 
 local gls = gl.section
 
-gl.short_line_list = {
-    'LuaTree',
-    'vista',
-    'dbui',
-    'startify',
-    'term',
-    'nerdtree',
-    'fugitive',
-    'fugitiveblame',
-    'plug'
-}
-
 -- VistaPlugin = extension.vista_nearest
 
 local themes_match = {
@@ -433,5 +421,52 @@ insert_right{
   Separa = {
     provider = function() return ' ' end,
     highlight = {colors.line_bg, },
+  }
+}
+
+gl.short_line_list = {
+    'LuaTree', 'vista', 'dbui', 'startify', 'term', 'nerdtree', 'fugitive',
+    'fugitiveblame', 'plug', 'NvimTree', 'DiffviewFiles'
+}
+
+require ('galaxyline').section.short_line_left = {
+  {
+    ShortLineLeftBufferType = {
+      highlight = {colors.cyan, colors.line_bg},
+      provider = function ()
+        local BufferTypeMap = {
+          ['Mundo'] = 'Mundo History',
+          ['MundoDiff'] = 'Mundo Diff',
+          ['NvimTree'] = ' Tree',
+          ['fugitive'] = ' Fugitive',
+          ['fugitiveblame'] = ' Fugitive Blame',
+          ['help'] = ' Help',
+          ['minimap'] = 'Minimap',
+          ['qf'] = ' Quick Fix',
+          ['tabman'] = 'Tab Manager',
+          ['tagbar'] = 'Tagbar',
+          ['toggleterm'] = 'Terminal',
+          ['FTerm'] = 'Terminal',
+          ['NeogitStatus'] = ' Neogit Status',
+          ['NeogitPopup'] = ' Neogit Popup',
+          ['NeogitCommitMessage'] = ' Neogit Commit',
+          ['DiffviewFiles'] = ' Diff View'
+        }
+        local name = BufferTypeMap[vim.bo.filetype] or ' Editor'
+        return string.format('  %s', name)
+      end,
+      separator = ' ',
+      separator_highlight = {colors.line_bg, colors.dark}
+    }
+  },
+  {
+    ShortLineLeftWindowNumber = {
+      highlight = {colors.cyan, colors.dark},
+      provider = function()
+        return ' ' .. vim.api.nvim_win_get_number(vim.api.nvim_get_current_win())
+      end,
+      separator = '',
+      separator_highlight = {colors.dark, "#0c0e17"}
+    }
   }
 }
